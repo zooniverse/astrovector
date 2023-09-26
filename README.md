@@ -4,7 +4,7 @@ AstroVector is an experimental Zooniverse project to explore new ways of discove
 
 ## Server Setup
 
-The current server is a bare Azure Ubuntu VM with 1GB RAM. Future iterations will likely benefit from an increase in memory capacity. The below linux commands were used to configure the server, database, and web server.
+The current server is a bare Azure Ubuntu VM with 1GB RAM. Future iterations will likely benefit from an increase in memory capacity. The below Linux commands were used to configure the server, database, and web server.
 
 ```
 sudo apt update
@@ -31,7 +31,7 @@ npm install pg
 sudo apt install npm
 ```
 
-After the basic server configuration has been performed, its time to configure the databases. The two different databases run on port 5432 and 5433 by default. The below commands get into psql mode so that postgres db commands can be run. We need to set the password so that it can be connected to by a web server. Repeat the below commands replacing 5432 with 5433 to connect to the second database.
+After the basic server configuration has been performed, its time to configure the databases. The two different databases run on port 5432 and 5433 by default. The below commands get into psql mode so that Postgres db commands can be run. We need to set the password so that it can be connected to a web server. Repeat the below commands replacing 5432 with 5433 to connect to the second database.
 
 ```
 sudo -u postgres psql -p 5432
@@ -39,7 +39,7 @@ ALTER USER postgres PASSWORD 'astrovector';
 EXIT;
 ```
 
-If all went well, the server is now setup with two running instances of the postgres database with the cube extension installed on one and the pgvector installed on the other. After the database is running properly, we'll now make the web server operational. In this repository, the server folder contains all the files required for a nodejs server to connect to the database and provide a web interface for the databases. To install all the dependencies, navigate to the server folder in the command line and then run the below command to install all the dependency requirements.
+If all went well, the server is now setup with two running instances of the Postgres database with the cube extension installed on one and the pgvector installed on the other. After the database is running properly, we'll now make the web server operational. In this repository, the server folder contains all the files required for a NodeJS server to connect to the database and provide a web interface for the databases. To install all the dependencies, navigate to the server folder in the command line and then run the below command to install all the dependency requirements.
 
 ```
 npm install
